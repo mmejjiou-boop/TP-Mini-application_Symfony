@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+
+            <div class="text-xl font-bold text-blue-600">
+                MonSite
+            </div>
+
+            <div class="space-x-6 hidden md:flex">
+                <a href="{{ path('film') }}" class="text-gray-600 hover:text-blue-600"> film</a>
+                <a href="{{ path('index') }}" class="text-gray-600 hover:text-blue-600"> index</a>
+            </div>
+
+            <div class="md:hidden">
+                <button class="text-gray-600">☰</button>
+            </div>
+
+        </div>
+    </div>
+</nav>
+<h1>Détail du film</h1>
+
+{% if film %}
+
+    <p><strong>Nom :</strong> {{ film.nom_du_film }}</p>
+    <p><strong>Année :</strong> {{ film.annee }}</p>
+    <p><strong>Slug :</strong> {{ slug }}</p>
+
+{% else %}
+
+    <p>Film introuvable</p>
+
+{% endif %}
+
+</ul>
+
+
+
+
+
+</body>
+</html>

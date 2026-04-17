@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+
+            <div class="text-xl font-bold text-blue-600">
+                MonSite
+            </div>
+
+            <div class="space-x-6 hidden md:flex">
+                <a href="{{ path('film') }}" class="text-gray-600 hover:text-blue-600"> film</a>
+                <a href="{{ path('index') }}" class="text-gray-600 hover:text-blue-600"> index</a>
+            </div>
+
+            <div class="md:hidden">
+                <button class="text-gray-600">☰</button>
+            </div>
+
+        </div>
+    </div>
+</nav>
+<h1>
+    {{ title }}
+</h1>
+
+</body>
+</html>
+
