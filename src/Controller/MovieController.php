@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class MovieController extends AbstractController
 {
-
+//route pour afficher la page d'accueil
     #[Route('/', name: 'index')]
         public function accueil(): Response
         {
@@ -20,7 +20,8 @@ final class MovieController extends AbstractController
                    'title' => $title,
             ]);
         }
-#[Route('/films/{slug}', name: 'films_show')]
+//route pour afficher le détail d'un film
+#[Route('/films/{slug}', name: 'films')]
 public function films(string $slug): Response
 {
     $films = [
@@ -31,20 +32,15 @@ public function films(string $slug): Response
         ['annee' => 2010, 'nom_du_film' => 'harry-potter-5'],
     ];
 
-    $film = null;
-
-    foreach ($films as $f) {
-        if ($f['nom_du_film'] === $slug) {
-            $film = $f;
-            break;
-        }
-    }
-
-    return $this->render('movie/films.html.twig', [
-        'film' => $film,
+ return $this->render('movie/films.html.twig', [
+        'films' => $films,
         'slug' => $slug
     ]);
 }
+
+
+
+//route pour afficher la liste des films
 #[Route('/film', name: 'film')]
 public function film(): Response
 {
@@ -60,4 +56,10 @@ public function film(): Response
         'films' => $films
     ]);
 }
+
+//route pour afficher la page de contact
+#[Route('/contact', name: 'contact')]
+    public function contact(): Response
+    {        return $this->render('movie/contact.html.twig');
+    }   
 }

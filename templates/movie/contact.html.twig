@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>détail du film</title>
+    <title>contact</title>
 </head>
-
-<body class="bg-gray-50 text-gray-800">
-
-<!-- NAVBAR -->
-<nav class="bg-white shadow-md">
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        p {
+            font-size: 18px;
+        }   
+    </style>
+    <nav class="bg-white shadow-md">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center py-4">
 
@@ -31,26 +42,11 @@
         </div>
     </div>
 </nav>
-<h1>Détail du film</h1>
-
-{% if films %}
-    {% for film in films %}
-        <li>
-          <strong>Année :</strong>  {{ film.annee }} - <strong>Nom :</strong>{{ film.nom_du_film }}   
-        </li>
-    {% endfor %}
-
-{% else %}
-
-    <p>Film introuvable</p>
-
-{% endif %}
-
-</ul>
-
-
-
-
+    <h1>contact</h1>
+    <div>
+        <p>Pour nous contacter, veuillez envoyer un email à : exemle@moi.com</p>
+        <p>Vous pouvez également nous appeler au : 123-456-7890</p>
+    </div>
 
 </body>
 </html>
